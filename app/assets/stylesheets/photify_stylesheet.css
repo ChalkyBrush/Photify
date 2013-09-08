@@ -1,0 +1,259 @@
+#container {
+	padding-left: 250px;
+}
+
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+div#header_bar {
+	position: fixed;
+	margin-left: -250px;
+	height: 60px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(0%,#2989d8), color-stop(0%,#29487f), color-stop(0%,#3e58a5), color-stop(100%,#29487f));
+	margin-top: -20px;
+	margin-right: -20px;
+	display: block;
+	width: 100%;
+	padding-right: 40px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+
+}
+
+div#sidebar {
+	position: fixed;
+	display: inline-block;
+	margin-left: -258px;
+	float: left;
+	width: 190px;
+	height: 1000px;
+	background-color: #31353e;
+	margin-top: -10px;
+	clear: right;
+	box-shadow: inset -10px 0 2px -5px hsla(0,0%,0%,.3);
+}
+
+div#content {
+	margin-left: 20%;
+	margin-top: 50px;
+	float: right;
+	width: 100%;
+	display: inline-block;
+	clear: all;
+	text-align: center;
+
+}
+
+.nav_button {
+	line-height: 50px;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 12px;
+	float: right;
+	width: 100px;
+	text-align: center;
+	border-left: 2px solid rgba(30,30,30,.4);
+	color: white;
+}
+
+.nav_button:hover {
+	/*box-shadow:inset 0 0 5px rgba;*/
+	background-color: rgba(0,0,0,.1);
+}
+
+#page_name_div {
+	width: 50%;
+    margin: 0 auto;
+    padding-left: 13%;
+    text-align: center;
+ 
+}
+
+a.nav_text_link {
+	color: rgba(250,250,250,.9);
+	text-shadow: 1px 1px rgba(0,0,0,.4);
+	text-transform: none;
+	font-size: 16px;
+}
+
+p#page_name {
+	text-align: center;
+	font-family: 'Satisfy', cursive;
+	text-shadow: 1px 1px rgba(0,0,0,.6);
+	font-size: 26px;
+	margin: 0px;
+	padding-top: 20px;
+	text-transform: none;
+	color: white;
+
+}
+
+p.action_link { 
+	float: right;
+	padding-right: 15px;
+	padding-top: 5px;
+	text-align: center;
+
+
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.picturecard {
+width: 31%;
+height: 300px;
+/*margin: 0 auto;*/
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 20px;
+background-color: rgba(62,151,209,.2);
+float: left;
+display: inline-block;
+box-shadow: 3px 3px 3px rgba(0,0,0,.6);
+text-align: center;
+}
+
+.picturecard:hover {
+background-color: rgba(62,151,209,.4);
+box-shadow: 3px 3px 3px rgba(0,0,0,.9);
+}
+
+.index {
+width: 90%;
+height: auto;
+margin: 0 auto;
+border: 2px solid rgba(0,0,0, .8);
+max-height: 225px;
+}
+
+.title {
+	margin-top: -10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	font-size: 20px;
+	text-align: center;
+	list-style-type: none;
+	text-transform: uppercase;
+}
+
+.author {
+	text-decoration: none;
+	font-size: 12px;
+	padding-bottom: 5px;
+	text-align: center;
+	list-style-type: none;
+	text-transform: uppercase;
+}
+
+.pageinfo {
+	text-decoration: none;
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+	line-height: 30px;
+	list-style-type: none;
+	text-transform: uppercase;
+}
+
+.two_column1 {
+	padding-top: 40px;
+	display: inline;
+	float: left;
+	width: 50%;
+	height: 100%;
+	margin-bottom: 20px;
+	background-color: rgba(62,151,209,.2);
+	box-shadow: 4px 4px 4px rgba(0,0,0,.6);
+}
+
+.two_column2 {
+	padding-top: 40px;
+	display: inline-block;
+	float: right;
+	width: 50%;
+	height: 100%;
+	margin-bottom: 20px;
+}
+
+.preview {
+	width: 90%;
+	height: auto;
+	padding-bottom: 20px;
+}
+
+#add_picture {
+	width: 100%;	
+}
+
+h1 {
+	margin: 0;
+}
+
+h2 {
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.category_image {
+	width: 100%;
+	height: 60px;
+
+}
+
+.filter_title {
+	list-style: none;
+	text-transform: none;
+	font-family: 'Noto Sans', sans-serif;
+	margin-bottom: 20px;
+	text-decoration: none;
+	font-size: 24px;
+}
+
+.filter_list {
+	line-height: 25px;
+	width: 190px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(250,250,250,.03);
+	/*border-bottom: 1px solid rgba(0,0,0,.9);*/
+	/*margin-left: -25px;*/
+}
+
+.filter_list:hover {
+	background-color: rgba(0,0,0,.1);
+
+}
+
+a.category_link {
+	color: rgba(220,220,220, .6);
+	padding-left: 18px;
+	font-weight: lighter;
+	text-transform: none;
+	font-size: 12px;
+}
+
+#sidebar_header {
+	font-family: 'Noto Sans', sans-serif;
+	line-height: 50px;
+	list-style: none;
+	font-size: 18px;
+	padding-left: 16px;
+	
+}
+
+#side_header_div {
+	width: 200px;
+	line-height: 50px;
+	color: rgba(220,220,220, .6);
+	font-family: 'Noto Sans', sans-serif;
+	line-height: 50px;
+	list-style: none;
+	font-size: 16px;
+	margin-bottom: -5px;
+	padding-top: 5px;
+}

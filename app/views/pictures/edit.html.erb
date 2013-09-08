@@ -1,0 +1,38 @@
+<h1>Edit Picture</h1>
+<h2>
+  <%= link_to "<< Back", @picture %>
+</h2>
+
+<div>
+<div class = "two_column2">
+<%= form_for @picture do |f| %>
+  <p>
+    <%= f.label "artist" %><br>
+    <%= f.text_field "artist" %>
+  </p>
+  <p>
+    <%= f.label "title" %><br>
+    <%= f.text_field "title" %>
+  </p>
+  <p>
+    <%= f.label "url" %><br>
+    <%= f.text_field "url" %>
+  </p>
+  <p>
+    <%= f.label "category" %><br>
+  <%= f.select :category, ['People', 'Places', 'Nature', 'Space', 'Architecture', 'Design', 'Illustration', 'Food', 'Sports', 'Miscellaneous'].sort %>
+</select>
+  </p>
+  <p>
+    <%= submit_tag "Save" %>
+  </p>
+<% end %>
+</div>
+
+<div class = "two_column1">
+    <li class="title"><%= @picture[:title] %></li>
+  <li class ="author"><%= @picture[:artist] %></li>
+  <%= image_tag(@picture.url, :class => "preview") %>
+</div>
+</div>
+

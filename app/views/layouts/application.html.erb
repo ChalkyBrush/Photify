@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photogur</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Satisfy' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="container">
+
+<div id="header_bar">
+
+	<div class ="nav_button">
+		<%= link_to "+ New", "/pictures/new", :class => "nav_text_link"%>
+	</div>
+
+	<div id="page_name_div">
+		<a href="/pictures"><p id="page_name">Photify</p></a>
+	</div>
+
+</div>
+
+<div id="sidebar">
+	<div id="side_header_div"><li id = "sidebar_header">Categories</li></div>
+	
+   <% categories=['People', 'Places', 'Nature', 'Space', 'Architecture', 'Design', 'Illustration', 'Food', 'Sports', 'Miscellaneous'].sort %>
+    <% categories.each do |category| %>
+	<div class = "filter_list"><%= link_to "#{category}", "/pictures/filter/#{category}", :class=>"category_link" %></div>
+	<% end %>
+
+</div>
+
+
+
+<div id="content">
+	<%= yield %>	
+</div>
+
+</div>
+</body>
+</html>
