@@ -21,4 +21,3 @@ test:
 production:
   adapter: postgresql
   database: photogur
-  host: localhost
