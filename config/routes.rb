@@ -10,7 +10,7 @@ Photogur::Application.routes.draw do
   # post 'pictures' => "pictures#create"
   # get 'pictures/new' => 'pictures#new'
 
-  # get 'pictures/:id' => 'pictures#show', as: "picture"
+  get 'pictures/:id' => 'pictures#show', as: "picture"
 
   get 'pictures/filter/:category' => 'pictures#filter'
   resources :pictures
