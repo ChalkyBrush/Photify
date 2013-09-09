@@ -14,4 +14,4 @@ Picture.create!(
     :title  => "Into the Poppies",
     :artist => "John Wilhelm",
     :url    => "http://monicao.s3.amazonaws.com/bitmaker/girl.jpg" 
-    :category => "Misc" )
+    :category => "Misc")
