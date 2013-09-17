@@ -11,10 +11,25 @@
 <div id="container">
 
 <div id="header_bar">
-
-	<div class ="nav_button">
+	<% if current_user %>
+	<div class ="nav_button" id="nav_button_left">
 		<%= link_to "+ New", "/pictures/new", :class => "nav_text_link"%>
 	</div>
+	<%end%>
+
+	<div class="nav_button" id="nav_button_right">
+		<% if current_user %>
+		<%= link_to "Log Out", session_path("current"), :class => "nav_text_link", :method => :delete %>
+		<% else %>
+		<%= link_to "Log In", "/sessions/new", :class => "nav_text_link" %>
+		<%end%>
+	</div>
+
+	<% if !current_user %>
+	<div class="nav_button" id="nav_button_right">
+		<%= link_to "Sign Up", "/users/new", :class => "nav_text_link" %>
+	</div>	
+	<% end %>
 
 	<div id="page_name_div">
 		<a href="/pictures"><p id="page_name">Photify</p></a>
@@ -23,7 +38,19 @@
 </div>
 
 <div id="sidebar">
-	<div id="side_header_div"><li id = "sidebar_header">Categories</li></div>
+
+	<%if current_user %>
+		<%= link_to "/users/#{current_user.id}" do %><div class="side_header_div" id="user_profile">
+			<div id="profile_picture_div"><%= image_tag(current_user.profile_picture, :class => "profile_picture") %></div>
+			<li id = "sidebar_header"> <%= current_user.first_name %> </li>
+			</div>
+		<% end %>
+
+	  <div class = "filter_list"><%= link_to "My Pictures", "/pictures/users/#{current_user.id}", :class=>"category_link" %>
+	  </div>
+	<% end %>
+
+	<div class="side_header_div"><li id = "sidebar_header">Categories</li></div>
 	
    <% categories=['People', 'Places', 'Nature', 'Space', 'Architecture', 'Design', 'Illustration', 'Food', 'Sports', 'Miscellaneous'].sort %>
     <% categories.each do |category| %>
@@ -31,8 +58,6 @@
 	<% end %>
 
 </div>
-
-
 
 <div id="content">
 	<%= yield %>	

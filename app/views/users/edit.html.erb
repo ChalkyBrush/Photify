@@ -1,0 +1,41 @@
+<h1>Users#edit</h1>
+
+<%= form_for @user do |f| %>
+
+<% if @user.errors.any? %>
+  <div class = "error_messages">
+  	<h3>Unable to create account:</h3>
+    <ul>
+  		<% for message in @user.errors.full_messages %>
+  			<li><%= message %></li>
+  		<% end %>
+  	</ul>
+  </div>
+ <% end %>
+
+  <div class="field">
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+  </div> 
+
+  <div class="field">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  </div> 
+
+
+  <div class="field">
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+  </div> 
+
+  <div class="field">
+	<%= f.label :profile_picture %>
+	<%= f.text_field :profile_picture %>
+  </div> 
+
+  <div class="action">
+  	<%= f.submit %>
+  </div>
+
+<% end %>	

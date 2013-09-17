@@ -1,10 +1,4 @@
-<%
-pics = Picture.order("created_at DESC")
-@newest_pictures = pics.limit(24)
-%>
-
-<li class="pageinfo"></li>
-<% @newest_pictures.each do |picture| %>
+<% @pictures.each do |picture| %>
 <div class="picturecard">
 <br>
   <li class="title"><%= picture[:title] %></li>

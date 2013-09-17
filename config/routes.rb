@@ -1,17 +1,11 @@
 Photogur::Application.routes.draw do
 
-  # root :to => "pictures#index"
-
-  # get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
-  # put 'pictures/:id' => "pictures#update", as: "update_picture"
-
-  # get 'pictures' => 'pictures#index'
-
-  # post 'pictures' => "pictures#create"
-  # get 'pictures/new' => 'pictures#new'
-
   get 'pictures/filter/:category' => 'pictures#filter'
+  get 'users/welcome' => 'users#welcome'
+  get 'pictures/users/:id' => 'pictures#user_pictures'
+  resources :users, :except => [:index]
   resources :pictures
+  resources :sessions, :only => [:new, :create, :destroy]
   root :to => "pictures#index"
 
 

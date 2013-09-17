@@ -1,0 +1,14 @@
+<% if @pictures.empty? %>
+    <h2>Oops...Looks like there are no pictures</h2>
+<% else %>
+
+<div class = "user_pictures_header" >
+	<div id = "user_pictures_image_div" >
+		<%= image_tag(@pictures.first.user.profile_picture, :class => "user_pictures_image") %>
+		<p id="user_pictures_name"><%= @pictures.first.user.first_name %> <%= @pictures.first.user.last_name %>'s Pictures</p>
+	</div>
+</div>
+
+<%= render 'filter' %>
+
+<% end %>

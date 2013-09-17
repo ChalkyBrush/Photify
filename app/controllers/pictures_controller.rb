@@ -15,6 +15,7 @@ class PicturesController < ApplicationController
   def create
     # make a new picture with what picture_params returns (which is a method we're calling)
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     if @picture.save
       # if the save for the picture was successful, go to index.html.erb
       redirect_to pictures_url
@@ -25,7 +26,7 @@ class PicturesController < ApplicationController
   end
 
   def picture_params
-    params.require(:picture).permit(:artist, :title, :url, :category)
+    params.require(:picture).permit(:artist, :title, :url, :category, :user_id)
   end
   
   def edit
@@ -50,8 +51,10 @@ class PicturesController < ApplicationController
 
   def filter
     @pictures = Picture.where(category: params[:category])
-   # @pictures = Picture.where(category: 'People')
   end
 
+  def user_pictures
+    @pictures = Picture.where(user_id: params[:id])
+  end
 
 end
