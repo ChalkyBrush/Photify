@@ -13,7 +13,7 @@ before_filter :load_picture
 
 		respond_to do |format|
 		if @comment.save
-      	format.html{redirect_to pictures_path(@picture.id), notice: 'Comment added'}
+      	format.html{redirect_to pictures_path(@picture.id), notice: 'Comment added'} #render html
       	format.js {} #looks for /views/comments/create.js.erb
     	else
       # otherwise render the view associated with the action :new (i.e. new.html.erb)
