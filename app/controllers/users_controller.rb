@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user.profile_picture = "http://www.faithlineprotestants.org/wp-content/uploads/2010/12/facebook-default-no-profile-pic.jpg"
     
   	if @user.save
+      session[:user_id] = @user.id
   		redirect_to '/users/welcome' #:notice => "Signed up!"
   	else 
   		render :new
