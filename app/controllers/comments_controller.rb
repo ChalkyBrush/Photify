@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 before_filter :load_picture
 #before_filter :ensure_logged_in, :only => [:edit, :create, :show, :update, :destroy]
 
-	def show
+	def show #show test
 		@comment = Comment.find(params[:id])
 	end
 
