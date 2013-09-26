@@ -6,6 +6,9 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+      if current_user
+      @comment = @picture.comments.build
+      end
   end
 
   def new
@@ -16,12 +19,14 @@ class PicturesController < ApplicationController
     # make a new picture with what picture_params returns (which is a method we're calling)
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
+
     if @picture.save
-      # if the save for the picture was successful, go to index.html.erb
-      redirect_to pictures_url
+      redirect_to pictures_path(@picture.id), notice: 'Comment added'
+      # format.js {} #looks for /views/comments/create.js.erb
     else
       # otherwise render the view associated with the action :new (i.e. new.html.erb)
-      render :new
+      render 'new', notice: "There was an error"
+      # format.js {}
     end
   end
 

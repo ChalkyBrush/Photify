@@ -6,6 +6,11 @@ Photogur::Application.routes.draw do
   resources :users, :except => [:index]
   resources :pictures
   resources :sessions, :only => [:new, :create, :destroy]
+
+  resources :pictures do
+    resources :comments, :except => [:index]
+  end
+
   root :to => "pictures#index"
 
 
