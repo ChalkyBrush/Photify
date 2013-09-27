@@ -10,4 +10,7 @@ $('#comments-list').html("<%= escape_javascript(render(:partial => '/pictures/co
 $('textarea').val("");
 $('.comment_content').first().attr("id","lastcomment")
 //$("body").scrollTo( 0, 800, {queue:true} );
-$("div").animate({ scrollTop: $(".lastcomment").scrollTop() }, 1000);
+var content = $(document).find("h3");
+   $('html, body').stop().animate({
+        scrollTop: $(content).offset().top
+    }, 500);
