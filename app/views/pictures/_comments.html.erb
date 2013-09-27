@@ -1,6 +1,6 @@
-<% @picture.comments.each do |m| %>
+<% @picture.comments.reverse.each do |m| %>
 	<p>
-	<li class="author">	<%= m.message %></li>
+	<li class="comment_content">	<%= m.message %></li>
 		<% if m.user != nil%>
 		<em> by <%= m.user.first_name %> <%= m.user.last_name %></em>
 		 at: <%= m.created_at.strftime("%b %e, %l:%M %p") %>

@@ -7,3 +7,17 @@
 	width: 500px;
 	height: 60px;
 }
+
+#lastcomment{
+	color: rgba(255,20,20);
+	font-size: 40px;
+}
+
+.comment_content{
+	text-decoration: none;
+	font-size: 12px;
+	padding-bottom: 5px;
+	text-align: center;
+	list-style-type: none;
+	text-transform: uppercase;
+}
