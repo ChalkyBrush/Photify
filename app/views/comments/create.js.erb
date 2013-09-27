@@ -10,8 +10,8 @@
 
 $('#comments-list').html("<%= escape_javascript(render(:partial => '/pictures/comments')) %>");
 $('textarea').val("");
-$('.comment_content').first().attr("id","lastcomment")
-var allchild = $("#lastcomment").children()
+$('.comment_content').first().attr("id","lastcomment");
+var allchild = $("#lastcomment").children();
 //$("#lastcomment").css({width: "0px", height: "0px"});
 $("#lastcomment").children().remove();
 $("#lastcomment").html("Saving Comment");
