@@ -1,3 +1,5 @@
+
+
 <% if @comment.errors.present? %>
   $("#comment-form-errors").html("<%= escape_javascript(render(:partial => '/pictures/comment_form_errors')) %>");
 <% else %>
@@ -9,9 +11,19 @@
 $('#comments-list').html("<%= escape_javascript(render(:partial => '/pictures/comments')) %>");
 $('textarea').val("");
 $('.comment_content').first().attr("id","lastcomment")
+var allchild = $("#lastcomment").children()
+//$("#lastcomment").css({width: "0px", height: "0px"});
+$("#lastcomment").children().remove()
 //$("body").scrollTo( 0, 800, {queue:true} );
 var content = $(document).find("h3");
    $('html, body').stop().animate({
         scrollTop: $(content).offset().top
     }, 500);
+setTimeout(function(){
+      $('#lastcomment').append(allchild);
+      setTimeout(function(){
+      	$('#lastcomment').stop(true, false).animate({backgroundColor:"#F2F2F2"}, 1400);
+      },600);	
+},900);
+
 
