@@ -5,10 +5,15 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
-      if current_user
-      @comment = @picture.comments.build
-      end
+    respond_to do |format|
+        format.html {
+        @picture = Picture.find(params[:id])
+        if current_user
+        @comment = @picture.comments.build
+        end
+        }
+        format.js {}
+    end
   end
 
   def new

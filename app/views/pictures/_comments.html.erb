@@ -1,10 +1,24 @@
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
 <% comment_array = @picture.comments.reverse %>
 <% comment_array.each do |m| %>
 <% if m.message !=nil%>
-	<div class="comment_content">
+
+<script type="text/javascript">
+     $(document).ready(function() {
+
+$(".comment_content").hover(function(){
+    $(this).stop(true, false).animate({backgroundColor:"#59ACFF"}, 500);
+}, function() {
+    $(this).stop(true, false).animate({backgroundColor:"#F2F2F2"}, 500);
+});
+});
+</script>
+	<div class="comment_content" >
 		<div class="comment_text"><%= m.message %><br></div>
 	    
-	    <div class="comment_info"><% if m.user != nil%>
+	    <div class="comment_info" ><% if m.user != nil%>
 		  <li id="user">by: <span class="user_name"><%= m.user.first_name %> <%= m.user.last_name %></span></li>
 	 	  <li id="date"><%= m.created_at.strftime("%b %e, %l:%M %p") %></li>
 	    <%end%>
@@ -12,3 +26,4 @@
 	</div>
 <%end%>
 <%end%>
+
