@@ -15,14 +15,14 @@ var allchild = $("#lastcomment").children()
 //$("#lastcomment").css({width: "0px", height: "0px"});
 $("#lastcomment").children().remove()
 //$("body").scrollTo( 0, 800, {queue:true} );
-var content = $(document).find("h3");
+var content = $(document).find("#scrollto");
    $('html, body').stop().animate({
-        scrollTop: $(content).offset().top
+        scrollTop: $(content).offset().top -150
     }, 500);
 setTimeout(function(){
       $('#lastcomment').append(allchild);
       setTimeout(function(){
-      	$('#lastcomment').stop(true, false).animate({backgroundColor:"#F2F2F2"}, 1400);
+      	$('#lastcomment').animate({backgroundColor:"#F2F2F2"}, 1400);
       },600);	
 },900);
 

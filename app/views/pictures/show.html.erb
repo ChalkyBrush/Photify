@@ -12,7 +12,7 @@
 <%= link_to "/pictures/users/#{@picture.user.id}" do %><li class ="author">Added by: <%= @picture.user.first_name %> <%= @picture.user.last_name %></li><% end %>
 <li class="author"><%= @picture[:category] %></li>
 <%= image_tag(@picture.url, :class => "preview") %>
-
+<div id="scrollto"></div>
 <% if current_user %>
 	<% if @picture.comments(1).any? %>
 	<H3>Comments</H3>
